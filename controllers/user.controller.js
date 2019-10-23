@@ -29,11 +29,25 @@ exports.create = (req, res) => {
 //   });
 // };
 
-exports.findOne = (req, res) => {
+exports.findByUserId = (req, res) => {
   User.find({ userId: req.params.userId }).then(results => {
     if (!results) {
       return res.status(404).send({
         message: `The userId: ${req.params.userId} was not found`
+      });
+    } else res.send(results);
+  }).catch(error => {
+    res.status(500).send({
+      message: error.message || 'Internal server error.'
+    });
+  });
+};
+
+exports.findByEmail = (req, res) => {
+  User.find({ email: req.params.email }).then(results => {
+    if (!results) {
+      return res.status(404).send({
+        message: `The email: ${req.params.email} was not found`
       });
     } else res.send(results);
   }).catch(error => {

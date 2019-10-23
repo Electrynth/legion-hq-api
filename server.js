@@ -43,6 +43,8 @@ autoIncrement.initialize(mongoose.connection);
 require('./routes/user.routes.js')(app, autoIncrement);
 require('./routes/user_list.routes.js')(app, autoIncrement);
 
+app.get('/', (req, res) => res.status(200).send('legion-hq-api'));
+
 app.listen(3000, () => {
   console.log('Server is listening on port 3000')
 });

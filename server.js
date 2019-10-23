@@ -4,6 +4,7 @@ const compression = require('compression');
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 const bodyParser = require('body-parser');
+const https = require('https');
 const config = require('./config.js');
 const key = fs.readFileSync('ssl/server.key', 'utf8');
 const cert = fs.readFileSync('ssl/server.crt', 'utf8');

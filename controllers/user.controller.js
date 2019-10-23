@@ -44,10 +44,10 @@ exports.findByUserId = (req, res) => {
 };
 
 exports.findByEmail = (req, res) => {
-  User.find({ email: req.params.email }).then(results => {
+  User.find({ email: req.query.email }).then(results => {
     if (!results) {
       return res.status(404).send({
-        message: `The email: ${req.params.email} was not found`
+        message: `The email: ${req.query.email} was not found`
       });
     } else res.send(results);
   }).catch(error => {

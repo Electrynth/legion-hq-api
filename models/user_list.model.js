@@ -3,7 +3,7 @@ const autoIncrement = require('mongoose-auto-increment');
 
 const UserListSchema = mongoose.Schema({
   pointTotal: Number,
-  userId: String,
+  userId: Number,
   faction: String,
   mode: String,
   title: String,

@@ -11,7 +11,11 @@ const UserListSchema = mongoose.Schema({
   units: Array,
   objectiveCards: Array,
   deploymentCards: Array,
-  conditionCards: Array
+  conditionCards: Array,
+  uniques: Array,
+  nonUniques: Array,
+  commanders: Array,
+  unitCounts: mongoose.Schema.Types.Mixed
 }, { timestamps: true, minimize: false });
 UserListSchema.plugin(autoIncrement.plugin, {
   model: 'user_lists',

@@ -1,4 +1,4 @@
-const UserList = require('../models/user.model.js');
+const UserList = require('../models/user_list.model.js');
 
 exports.create = (req, res) => {
   // TODO: do better/more validation for this...

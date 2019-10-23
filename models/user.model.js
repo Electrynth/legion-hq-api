@@ -4,7 +4,7 @@ const autoIncrement = require('mongoose-auto-increment');
 const UserSchema = mongoose.Schema({
   email: String,
   settings: mongoose.Schema.Types.Mixed
-}, { timestamps: true });
+}, { timestamps: true, minimize: false });
 
 UserSchema.plugin(autoIncrement.plugin, {
   model: 'users',

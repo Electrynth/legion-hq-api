@@ -8,7 +8,7 @@ exports.create = (req, res) => {
   }
   const user = new User({
     email: req.body.email,
-    settings: {}
+    settings: req.body.settings || {}
   });
   user.save().then(data => {
     res.send(data);

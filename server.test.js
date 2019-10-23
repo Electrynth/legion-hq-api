@@ -1,12 +1,11 @@
 const express = require('express');
+const path = require('path');
 const fs = require('fs');
 const compression = require('compression');
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 const bodyParser = require('body-parser');
 const config = require('./config.js');
-const key = fs.readFileSync('ssl/server.key', 'utf8');
-const cert = fs.readFileSync('ssl/server.crt', 'utf8');
 
 const app = express();
 app.use(compression());
@@ -46,8 +45,6 @@ require('./routes/user_list.routes.js')(app, autoIncrement);
 
 app.get('/', (req, res) => res.status(200).send('legion-hq-api'));
 
-const server = https.createServer({ key, cert }, app);
-
-server.listen(config.port, () => {
-  console.log(`Server is running on port ${config.port}.`);
+app.listen(3000, () => {
+  console.log('Server is listening on port 3000')
 });

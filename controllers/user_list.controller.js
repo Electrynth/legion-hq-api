@@ -8,7 +8,8 @@ exports.create = (req, res) => {
     });
   }
   const userList = new UserList({
-    ...req.body
+    ...req.body,
+    title: req.body.title === '' ? 'Untitled' : req.body.title
   });
   userList.save().then(data => {
     res.send(data);

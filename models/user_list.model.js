@@ -18,6 +18,7 @@ const UserListSchema = mongoose.Schema({
   nonUniques: Array,
   commanders: Array,
   unitSerials: Array,
+  entourageLeaders: Array,
   limited: mongoose.Schema.Types.Mixed,
   rankCounts: mongoose.Schema.Types.Mixed
 }, { timestamps: true, minimize: false });

@@ -9,7 +9,7 @@ const UserListSchema = mongoose.Schema({
   title: String,
   notes: String,
   serial: String,
-  units: Array,
+  unitObjects: Array,
   objectiveCards: Array,
   deploymentCards: Array,
   conditionCards: Array,

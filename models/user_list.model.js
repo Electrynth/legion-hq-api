@@ -10,6 +10,7 @@ const UserListSchema = mongoose.Schema({
   notes: String,
   serial: String,
   unitObjects: Array,
+  commandCards: Array,
   objectiveCards: Array,
   deploymentCards: Array,
   conditionCards: Array,

@@ -6,18 +6,22 @@ const UserListSchema = mongoose.Schema({
   userId: Number,
   numActivations: Number,
   faction: String,
-  mode: String,
+  listMode: String,
   title: String,
   notes: String,
-  units: Array,
+  serial: String,
+  unitObjects: Array,
   commandCards: Array,
   objectiveCards: Array,
   deploymentCards: Array,
   conditionCards: Array,
   uniques: Array,
+  nonUniques: Array,
   commanders: Array,
-  unitObjectStrings: Array,
-  unitCounts: mongoose.Schema.Types.Mixed
+  unitSerials: Array,
+  entourageLeaders: Array,
+  limited: mongoose.Schema.Types.Mixed,
+  rankCounts: mongoose.Schema.Types.Mixed
 }, { timestamps: true, minimize: false });
 UserListSchema.plugin(autoIncrement.plugin, {
   model: 'user_lists',

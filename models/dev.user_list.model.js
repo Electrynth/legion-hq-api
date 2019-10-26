@@ -6,7 +6,7 @@ const UserListSchema = mongoose.Schema({
   userId: Number,
   numActivations: Number,
   faction: String,
-  listMode: String,
+  mode: String,
   title: String,
   notes: String,
   serial: String,
